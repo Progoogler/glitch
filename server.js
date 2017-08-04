@@ -4,7 +4,6 @@
 // init project
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser');
 var timestamp = require('unix-timestamp');
 
 // we've started you off with Express, 
@@ -13,16 +12,9 @@ var timestamp = require('unix-timestamp');
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 
-app.use(bodyParser.urlencoded());
-
-app.use(bodyParser.json());
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
-});
-
-app.get("/dreams", function (request, response) {
-  response.send(dreams);
 });
 
 app.get('*', function (request, response) {
@@ -86,19 +78,6 @@ app.get('*', function (request, response) {
   }
   response.send(res);
 });
-
-// could also use the POST instead of query string: http://expressjs.com/en/api.html#req.body
-app.post("/dreams", function (request, response) {
-  dreams.push(request.query.dream);
-  response.sendStatus(200);
-});
-
-// Simple in-memory store for now
-var dreams = [
-  "Find and count some sheep",
-  "Climb a really tall mountain",
-  "Wash the dishes"
-];
 
 var getMonth = function(string) {
   switch (string) {
