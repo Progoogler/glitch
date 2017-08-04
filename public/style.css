@@ -1,0 +1,49 @@
+/* styles */
+/* called by your view template */
+
+/* You might want to try something fancier: */
+/* less: http://lesscss.org/ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 25px;
+}
+
+h1 {
+  font-weight: bold;
+  color: red;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+p {
+  max-width: 600px;
+}
+
+footer {
+  position: absolute;
+  bottom: 2em;
+}
+
+.http-example {
+  font-size: 1.5em;
+  color: red;
+}
+
+.result-container {
+  padding: 1em;
+  display: inline-block;
+  border: 1px solid black;
+  background-color: grey;
+}
+
+.result-example {
+  font-size: 1.5em;
+  
+}
